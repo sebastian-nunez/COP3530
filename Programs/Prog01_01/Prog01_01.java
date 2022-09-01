@@ -19,7 +19,6 @@ public class Prog01_01 {
             double y3 = in.nextDouble();
 
             in.nextLine();
-
             double a = distance(x1, y1, x2, y2);
             double b = distance(x1, y1, x3, y3);
             double c = distance(x2, y2, x3, y3);
