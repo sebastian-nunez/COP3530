@@ -121,7 +121,7 @@ Point q = new Point(p.getX(), p.getY());
 
 ```
 
-## Polymorhish
+## Polymorphism
 
 - "many forms": allows for extra flexibility by changing an object's behavior depending on the type of object (OVERRIDING)
 
