@@ -1,5 +1,9 @@
 import java.util.Random;
 
+/*
+ * This program initializes an array with Random Numbers.
+ * - Calculated min, max and avg values
+ */
 public class Prog08_02 {
     public static void main(String[] args) {
         final int SIZE = 10;
