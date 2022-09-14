@@ -18,7 +18,10 @@ public class Node {
     private int data;
     private Node next;
 
-    public Node() {...}
+    public Node() {
+        data = 0;
+        next = null;
+    }
 
     // getters/setters
     public int getData() {...}
