@@ -1,6 +1,6 @@
 # Linked List
 
-**Definition:** a list of items, called nodes, where each node has two fields:
+**Definition:** a list of items, called "nodes", where each node has two fields:
 One containing information/data and the one that is a reference to the next in the list (next or link)
 
 - For a Singly-LinkedList, the last node points to null
@@ -35,7 +35,7 @@ public class Node {
 
 ```java
 public class LinkedList {
-    private Node first;
+    private Node head;
 
     public LinkedList() {...}
 
@@ -52,16 +52,18 @@ public class LinkedList {
 
 ```java
 public class LinkedList {
-    private Node first;
+    private Node head;
 
     public LinkedList() {
-        first = new Node();
+        head = new Node();
     }
 
-    public boolean isEmpty() {...}
+    public boolean isEmpty() {
+        return head.getNext() == null;
+    }
 
     public void display() {
-        Node current = first.getNext();
+        Node current = head.getNext();
 
         while (current != null) {
             // process the item
@@ -75,7 +77,7 @@ public class LinkedList {
     }
 
     public boolean search(int x) {
-        Node current = first.getNext();
+        Node current = head.getNext();
 
         while (current != null) {
             // process the item
@@ -95,18 +97,17 @@ public class LinkedList {
         p.setData(x);
 
         // the new Node points where the last one pointed
-        p.setNext(first.getNext());
+        p.setNext(head.getNext());
 
-        first.setNext(p);
+        head.setNext(p);
     }
 
     // find the location of the node before it
     public remove(int x) {
-        Node old = first.getNext();
-        Node p = first;
+        Node old = head.getNext();
+        Node p = head;
 
         boolean found = false;
-
         while (old != null && !found) {
             if (old.getData() == x) {
                 found = true;
