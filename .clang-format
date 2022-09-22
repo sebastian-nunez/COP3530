@@ -1,6 +1,6 @@
-BasedOnStyle: Google
-IndentWidth: 4
-AccessModifierOffset: -4
+BasedOnStyle: LLVM
+# IndentWidth: 4
+# AccessModifierOffset: -4
 AllowShortFunctionsOnASingleLine: Empty
-ColumnLimit: 120
+# ColumnLimit: 120
 AllowShortLoopsOnASingleLine: false
