@@ -8,13 +8,15 @@ The _queue_ ADT consits of a collection of homogenous (same type) elements and t
 
 - **Enqueue**: insertion of a new element in the back or rear of the queue
 - **Dequeue**: deletion of the front or first element
+- Use a **'size'** to keep track of the length of the queue (empty vs. full)
+- use **'% CAPACITY'** to implement circularity
 
 ## Circular Queue
 
 - If the queue reaches the end of the array, you can loop the 'back' pointer to the beginning:
 
-  - back = (back + 1) % SIZE // % when you reach the end, back will be zero
-  - front = (front + 1) % SIZE
+  - back = (back + 1) % CAPACITY // % when you reach the end, back will be zero
+  - front = (front + 1) % CAPACITY
 
 - **Note: % number between 0 and n - 1**
 

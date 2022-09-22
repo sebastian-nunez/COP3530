@@ -1,34 +1,33 @@
 public class Queue {
 
     public Queue() {
-        size = 100;
-        list = new char[size];
+        capacity = 100;
+        list = new char[capacity];
 
         front = 0;
-        back = size - 1;
-
-        count = 0;
+        back = capacity - 1;
+        size = 0;
     }
 
     public Queue(int s) {
-        size = s;
-        list = new char[size];
+        capacity = s;
+        list = new char[capacity];
 
         front = 0;
-        back = size - 1;
+        back = capacity - 1;
 
-        count = 0;
+        size = 0;
     }
 
     public void enqueue(char c) {
-        back = (back + 1) % size;
+        back = (back + 1) % capacity;
         list[back] = c;
-        count++;
+        size++;
     }
 
     public void dequeue() {
-        front = (front + 1) % size;
-        count--;
+        front = (front + 1) % capacity;
+        size--;
     }
 
     public char getFront() {
@@ -36,11 +35,11 @@ public class Queue {
     }
 
     public boolean isEmpty() {
-        return count == 0;
+        return size == 0;
     }
 
     private char[] list;
+    private int capacity;
     private int size;
-    private int count;
     private int front, back;
 }
