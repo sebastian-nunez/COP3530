@@ -17,15 +17,34 @@ def longestIsland(graph: dict) -> bool:
 
     longest = 0
     for node in graph:
-        current = explore_size_dfs(graph, node, visited)
+        # size = explore_size_dfs(graph, node, visited)
+        size = explore_size_dfs(graph, node, visited)
 
-        if current > longest:
-            longest = current
+        if size > longest:
+            longest = size
 
     return longest
 
 
 def explore_size_dfs(graph: dict, node: int, visited: set) -> int:
+    stack = [node]
+
+    size = 0
+    while stack:
+        current = stack.pop()
+
+        for neighbor in graph[current]:
+            if neighbor in visited:
+                continue
+
+            stack.append(neighbor)
+            visited.add(neighbor)
+            size += 1
+
+    return size
+
+
+def explore_size_dfs_recursive(graph: dict, node: int, visited: set) -> int:
     if node in visited:
         return 0
 
