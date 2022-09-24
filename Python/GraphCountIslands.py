@@ -17,20 +17,20 @@ def countIslands(graph: dict) -> int:
 
     count = 0
     for node in graph:
-        if explore_dfs_recursive(graph, node, visited):
+        if explore_node(graph, node, visited):
             count += 1
 
     return count
 
 
-def explore_dfs_recursive(graph: dict, src: int, visited: set) -> bool:
-    if src in visited:
+def explore_node(graph: dict, source: int, visited: set) -> bool:
+    if source in visited:
         return False
 
-    visited.add(src)
+    visited.add(source)
 
-    for neighbor in graph[src]:
-        explore_dfs_recursive(graph, neighbor, visited)
+    for neighbor in graph[source]:
+        explore_node(graph, neighbor, visited)
 
     return True  # sucessfully explored all neighbors
 
