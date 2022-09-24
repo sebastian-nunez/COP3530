@@ -28,8 +28,9 @@ def longestIsland(graph: dict) -> bool:
 
 def explore_size_dfs(graph: dict, node: int, visited: set) -> int:
     stack = [node]
+    visited.add(node)
 
-    size = 0
+    size = 1
     while stack:
         current = stack.pop()
 
