@@ -7,16 +7,15 @@ def main():
     print(shorest_path_bfs(edges, 'w', 'z'))  # -> 2
 
 
-def shorest_path_bfs(edges: list, src: str, dst: str) -> int:
+def shorest_path_bfs(edges: list, source: str, target: str) -> int:
     graph = graph_from_edges(edges)
-
-    queue = deque([(src, 0)])  # (node, distance from the src)
-    visited = set([(src, 0)])
+    queue = deque([(source, 0)])  # pair: (node, distance from the src)
+    visited = set([source])
 
     while queue:
         (current, distance) = queue.popleft()
 
-        if current == dst:
+        if current == target:
             return distance
 
         # explore the neighbors
@@ -25,7 +24,7 @@ def shorest_path_bfs(edges: list, src: str, dst: str) -> int:
                 continue
 
             queue.append((neighbor, distance + 1))
-            visited.add(current)
+            visited.add(neighbor)
 
     return -1
 
@@ -33,15 +32,15 @@ def shorest_path_bfs(edges: list, src: str, dst: str) -> int:
 def graph_from_edges(edges: list) -> dict:
     graph = dict()
 
-    for (src, dst) in edges:
-        if src not in graph:
-            graph[src] = set()
+    for (source, target) in edges:
+        if source not in graph:
+            graph[source] = set()
 
-        if dst not in graph:
-            graph[dst] = set()
+        if target not in graph:
+            graph[target] = set()
 
-        graph[src].add(dst)
-        graph[dst].add(src)
+        graph[source].add(target)
+        graph[target].add(source)
 
     return graph
 
