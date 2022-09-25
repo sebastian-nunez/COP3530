@@ -11,8 +11,13 @@ def main():
         'f': set()
     }
 
+    print("DFS Iterative")
     print_dfs(graph, 'a')
     print('-------------')
+    print("DFS Recursive")
+    print_dfs_recursive(graph, 'a')
+    print('-------------')
+    print("BFS")
     print_bfs(graph, 'a')
     print('-------------')
     print(f"a to e(dfs): {path_dfs(graph, 'a', 'e')}")
@@ -153,6 +158,16 @@ def print_bfs(graph, source) -> None:
         # iterate through all the neighbor of this node and push them to the queue
         for neighbor in graph[current]:
             queue.append(neighbor)
+
+
+def print_dfs_recursive(graph: dict, source: str) -> None:
+    if graph is None:
+        return
+
+    print(source)
+
+    for neighbor in graph[source]:
+        print_dfs_recursive(graph, neighbor)
 
 
 if __name__ == '__main__':

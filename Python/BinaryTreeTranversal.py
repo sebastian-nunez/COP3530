@@ -21,6 +21,16 @@ def main():
     #  /  \    \
     # d    e    f
 
+    print("Pre Order")
+    print_preorder(a)
+    print("--------------------------")
+    print("Pre In-Order")
+    print_inorder(a)
+    print("--------------------------")
+    print("Post Order")
+    print_postorder(a)
+    print("--------------------------")
+
     print(f"bfs found 'e': {tree_bfs(a, 'e')}")
     print(f"bfs found 'g': {tree_bfs(a, 'g')}")
     print(f"bfs found 'b': {tree_bfs(a, 'b')}")
@@ -40,13 +50,13 @@ class Node:
 
 
 # tree tranversal using depth-first search (dfs)
-def tree_dfs(root: Node, target: str) -> bool:
+def tree_dfs(node: Node, target: str) -> bool:
     # check for empty tree
-    if root == None:
+    if node == None:
         return False
 
     # set up a stack to store the visited nodes
-    stack = [root]
+    stack = [node]
 
     # iterate through the stack while its not empty
     while stack:
@@ -66,16 +76,15 @@ def tree_dfs(root: Node, target: str) -> bool:
 
     return False
 
+
 # tree tranversal using breath-first search (bfs)
-
-
-def tree_bfs(root: Node, target: str) -> bool:
+def tree_bfs(node: Node, target: str) -> bool:
     # empty tree
-    if root == None:
+    if node == None:
         return False
 
     # create a queue
-    queue = deque([root])
+    queue = deque([node])
 
     # iterate through the queue (while its not empty)
     while queue:
@@ -93,6 +102,33 @@ def tree_bfs(root: Node, target: str) -> bool:
             queue.append(current.right)
 
     return False
+
+
+def print_preorder(node: Node = None) -> None:
+    if node is None:
+        return
+
+    print(node.data)
+    print_preorder(node.left)
+    print_preorder(node.right)
+
+
+def print_inorder(node: Node = None) -> None:
+    if node is None:
+        return
+
+    print_inorder(node.left)
+    print(node.data)
+    print_inorder(node.right)
+
+
+def print_postorder(node: Node = None) -> None:
+    if node is None:
+        return
+
+    print_postorder(node.left)
+    print_postorder(node.right)
+    print(node.data)
 
 
 if __name__ == "__main__":
