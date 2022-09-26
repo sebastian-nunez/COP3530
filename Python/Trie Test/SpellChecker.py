@@ -6,14 +6,14 @@ def main():
     global naive_count
     global optimized_count
 
-    trie = Trie()
+    dictionary = Trie()
     file = open("./words.txt", "r")
 
     words_list = []
     for word in file:
         word = word.strip().lower()
 
-        trie.insert(word)
+        dictionary.insert(word)
         words_list.append(word)
 
     while True:
@@ -30,7 +30,7 @@ def main():
             print('Only letters [a-z] are allowed! Try again...')
             continue
 
-        is_valid_word = trie.search(word)
+        is_valid_word = dictionary.search(word)
         for w in words_list:
             naive_count += 1
             if w == word:
