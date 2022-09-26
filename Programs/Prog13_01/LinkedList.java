@@ -81,22 +81,22 @@ public class LinkedList implements ListInterface {
      * Removes the first occurence of "x" in the list
      */
     public void remove(int x) {
-        Node old = first.getNext();
-        Node p = first;
+        Node next = first.getNext();
+        Node prev = first;
 
         boolean found = false;
-        while (old != null) {
-            if (old.getInfo() == x) {
+        while (next != null) {
+            if (next.getInfo() == x) {
                 found = true;
                 break;
             } else {
-                p = old;
-                old = p.getNext();
+                prev = next;
+                next = prev.getNext();
             }
         }
 
         if (found) {
-            p.setNext(old.getNext());
+            prev.setNext(next.getNext());
         }
     }
 
