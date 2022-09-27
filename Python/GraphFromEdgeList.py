@@ -3,7 +3,7 @@ def main():
 
     graph = graph_from_edges(edges)
 
-    print(f"j to m: {has_path_dfs(graph, 'j', 'm')}")
+    print(f"j to m: {has_path_dfs(graph, 'j', 'm')}")  # expects true
 
 
 def graph_from_edges(edges: list) -> dict:

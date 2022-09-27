@@ -53,7 +53,10 @@ class LinkedList:
         self.head.next = Node(data, next)
         self.size += 1
 
-    def insert(self, data: int, index: int) -> None:
+    def insert(self, data: int, index: int) -> bool:
+        if index > self.size:
+            return False
+
         current = self.head.next
         prev = self.head
 
@@ -63,15 +66,17 @@ class LinkedList:
                 next = prev.next
                 prev.next = Node(data, next)
                 self.size += 1
-                return
+                return True
 
             i += 1
             prev = current
             current = current.next
 
-    def remove(self, target: int) -> None:
+        return False
+
+    def remove(self, target: int) -> bool:
         if self.is_empty():
-            return
+            return False
 
         current = self.head.next
         prev = self.head
@@ -80,10 +85,12 @@ class LinkedList:
             if current.data == target:
                 prev.next = current.next
                 self.size -= 1
-                return
+                return True
 
             prev = current
             current = current.next
+
+        return False
 
     def search(self, target: int) -> bool:
         current = self.head.next

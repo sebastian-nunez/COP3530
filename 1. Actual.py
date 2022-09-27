@@ -32,7 +32,7 @@ def longestSequence(data: list) -> list:
                 result = list(people)
 
             people.remove(person)  # FIXME: incorrect level of indetation
-            lower += 1
+            lower += 1  # FIXME: lower pointer not needed since we remove the duplicate directly
 
         people.add(person)
         upper += 1

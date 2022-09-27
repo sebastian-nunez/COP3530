@@ -11,6 +11,14 @@ def main():
         'f': set()
     }
 
+    #        a
+    #      /    \
+    #     c      b
+    #    /        \
+    #   e          d
+    #               \
+    #                f
+
     print("DFS Iterative")
     print_dfs(graph, 'a')
     print('-------------')
