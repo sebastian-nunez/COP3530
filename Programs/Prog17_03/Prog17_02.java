@@ -2,10 +2,10 @@ import java.util.HashMap;
 
 public class Prog17_02 {
     public static void main(String[] args) {
-        HashMap<Integer, Long> memo = new HashMap<Integer, Long>();
+        // HashMap<Integer, Long> memo = new HashMap<Integer, Long>();
 
-        // for (int n = 0; n <= 100; n++)
-        System.out.println(fibMemo(499, memo));
+        for (int n = 0; n <= 100; n++)
+            System.out.println("" + n + ": " + fib(n, null));
     }
 
     public static int fib(int n) {
@@ -16,27 +16,37 @@ public class Prog17_02 {
 
         if (n == 0)
             return 0;
-
-        if (n == 1)
+        else if (n == 1)
             return 1;
 
         return fib(n - 1) + fib(n - 2);
     }
 
-    public static long fibMemo(int n, HashMap<Integer, Long> memo) {
+    public static long fib(int n, HashMap<Integer, Long> memo) {
         if (n < 0) {
             System.out.println("n must be a positive integer!");
-            return -1;
+            System.exit(1);
+        }
+
+        if (memo == null) {
+            memo = new HashMap<Integer, Long>();
         }
 
         if (n == 0)
             return 0;
-
-        if (n == 1)
+        else if (n == 1)
             return 1;
 
-        if (!memo.containsKey(n))
-            memo.put(n, fibMemo(n - 1, memo) + fibMemo(n - 2, memo));
+        if (!memo.containsKey(n)) {
+            long result = fib(n - 1, memo) + fib(n - 2, memo);
+
+            if (result < 0) {
+                System.out.println("OVERFLOW!");
+                System.exit(1);
+            }
+
+            memo.put(n, result);
+        }
 
         return memo.get(n);
     }
