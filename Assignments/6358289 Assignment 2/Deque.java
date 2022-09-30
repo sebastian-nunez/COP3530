@@ -1,19 +1,19 @@
-
 /**
  * The class Deque implements a double-ended queue with a doubly linked list.
  * The list uses a header and a trailer (dummy) nodes.
  *
- * @author Sebastian Nunez - 6358289 
+ * @author Sebastian Nunez (6358289) - COP3530 U01 84883
  */
-public class Deque
-{
+public class Deque {
+    private int count; //number of elements in the deque
+    private Node back; //points to the item in the back
+    private Node front; //points to the item in the front
 
     /**
      * Default constructor. Sets this object as an empty deque.
      *
      */
-    public Deque()
-    {
+    public Deque() {
         front = new Node();
         back = new Node();
         front.setNext(back);
@@ -27,9 +27,21 @@ public class Deque
      *
      * @param x new element to be added to the deque.
      */
-    public void addToBack(int x)
-    {
-        //TO IMPLEMENT
+    public void addToBack(int x) {
+        // new node
+        Node ptr = new Node();
+        ptr.setInfo(x);
+
+        // adjust the new prev node to point to the new node (and vice versa )
+        Node prev = back.getPrev();
+        ptr.setPrev(prev);
+        prev.setNext(ptr);
+
+        // adjust the new node to point to the tail (and vise versa)
+        ptr.setNext(back);
+        back.setPrev(ptr);
+
+        count++;
     }
 
     /**
@@ -38,9 +50,21 @@ public class Deque
      *
      * @param x new element to be added to the deque.
      */
-    public void addToFront(int x)
-    {
-        //TO IMPLEMENT
+    public void addToFront(int x) {
+        // new node
+        Node ptr = new Node();
+        ptr.setInfo(x);
+
+        // adjust the new next node to point to the new node (and vice versa )
+        Node next = front.getNext();
+        ptr.setNext(next);
+        next.setPrev(ptr);
+
+        // adjust the head to point to the new node (and vice versa)
+        front.setNext(ptr);
+        ptr.setPrev(front);
+
+        count++;
     }
 
     /**
@@ -51,9 +75,13 @@ public class Deque
      * back end; operation is unsuccessful (i.e. empty deque): valid = false and
      * item = dummy value
      */
-    public DequeItem getBack()
-    {
-        return new DequeItem(); //DUMMY CODE; TO IMPLEMENT
+    public DequeItem getBack() {
+        if (isEmpty())
+            return new DequeItem();
+
+        Node last = back.getPrev();
+
+        return new DequeItem(true, last.getInfo());
     }
 
     /**
@@ -64,9 +92,13 @@ public class Deque
      * front end; operation is unsuccessful (i.e. empty deque): valid = false and
      * item = dummy value
      */
-    public DequeItem getFront()
-    {
-        return new DequeItem(); //DUMMY CODE; TO IMPLEMENT
+    public DequeItem getFront() {
+        if (isEmpty())
+            return new DequeItem();
+
+        Node first = front.getNext();
+
+        return new DequeItem(true, first.getInfo());
     }
 
     /**
@@ -74,9 +106,8 @@ public class Deque
      *
      * @return true if deque contains no elements, false otherwise.
      */
-    public boolean isEmpty()
-    {
-        return false;   //DUMMY CODE; TO IMPLEMENT
+    public boolean isEmpty() {
+        return count == 0;
     }
 
     /**
@@ -85,9 +116,19 @@ public class Deque
      * @return false if removal cannot be performed (i.e. the deque is empty),
      * true otherwise
      */
-    public boolean removeBack()
-    {
-        return false;   //DUMMY CODE; TO IMPLEMENT
+    public boolean removeBack() {
+        if (isEmpty())
+            return false;
+
+        Node removed = back.getPrev(); // node to be removed
+        Node prev = removed.getPrev(); // new previous node
+
+        // new previous points to the back (and vice versa)
+        prev.setNext(back);
+        back.setPrev(prev);
+
+        count--;
+        return true;
     }
 
     /**
@@ -97,9 +138,19 @@ public class Deque
      * @return false if removal cannot be performed (i.e. the deque is empty),
      * true otherwise
      */
-    public boolean removeFront()
-    {
-        return false;   //DUMMY CODE; TO IMPLEMENT
+    public boolean removeFront() {
+        if (isEmpty())
+            return false;
+
+        Node removed = front.getNext(); // node to be removed
+        Node next = removed.getNext(); // new next node
+
+        // the head now points to the new node (and vice versa)
+        front.setNext(next);
+        next.setPrev(front);
+
+        count--;
+        return true;
     }
 
     /**
@@ -107,13 +158,11 @@ public class Deque
      *
      * @return String containing the deque elements.
      */
-    public String toString()
-    {
+    public String toString() {
         String str = "";
 
         Node current = front.getNext();
-        for (int i = 0; i < count - 1; i++)
-        {
+        for (int i = 0; i < count - 1; i++) {
             str += current.getInfo() + ", ";
             current = current.getNext();
         }
@@ -123,8 +172,4 @@ public class Deque
         else
             return "Deque: []";
     }
-
-    private int count;  //number of elements in the deque
-    private Node back;  //points to the item in the back
-    private Node front; //points to the item in the front
 }

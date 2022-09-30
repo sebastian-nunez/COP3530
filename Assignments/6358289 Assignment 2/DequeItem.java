@@ -4,15 +4,15 @@
  *
  * @author Prof. Hernandez
  */
-public class DequeItem
-{
+public class DequeItem {
+    public boolean valid; //true if "item" is a valid element, false otherwise
+    public int item; //deque element
 
     /**
      * Default constructor. Sets this object to a invalid deaue item.
      *
      */
-    public DequeItem()
-    {
+    public DequeItem() {
         valid = false;
         item = 0;
     }
@@ -23,12 +23,9 @@ public class DequeItem
      * @param v value of the "valid" component of this object
      * @param i value of the "item" component of this object
      */
-    public DequeItem(boolean v, int i)
-    {
+    public DequeItem(boolean v, int i) {
         valid = v;
         item = i;
     }
 
-    public boolean valid; //true if "item" is a valid element, false otherwise
-    public int item;      //deque element
 }

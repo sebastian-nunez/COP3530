@@ -8,45 +8,37 @@ import java.util.Scanner;
  *
  * @author Prof. A. Hernandez
  */
-public class Main
-{
+public class Main {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         new Main();
     }
 
     /**
      * Tester method.
      */
-    public Main()
-    {
+    public Main() {
         Deque deque = new Deque();
 
         File file = new File("assignment 2 test set.txt");
 
-        try
-        {
+        try {
             Scanner in = new Scanner(file);
 
             String operation;
             int item = 0;
             int entryNumber = 0;
-            while (in.hasNextLine())
-            {
+            while (in.hasNextLine()) {
                 entryNumber++;
                 operation = in.next();
-                if (operation.equals("ADD_TO_BACK") || operation.equals("ADD_TO_FRONT"))
-                {
+                if (operation.equals("ADD_TO_BACK") || operation.equals("ADD_TO_FRONT")) {
                     item = in.nextInt();
                     System.out.println("\n" + operation + " " + item);
-                }
-                else
+                } else
                     System.out.println("\n" + operation);
 
                 DequeItem result;
-                switch (operation)
-                {
+                switch (operation) {
                     case "ADD_TO_BACK":
                         deque.addToBack(item);
                         System.out.println(deque);
@@ -96,10 +88,12 @@ public class Main
                         System.exit(1);
                 }
             }
-        } catch (FileNotFoundException e)
-        {
+
+            in.close();
+        } catch (FileNotFoundException e) {
             System.out.println("File not found!");
             System.exit(1);
         }
+
     }
 }
