@@ -1,7 +1,8 @@
 def largestMagicNumber(arr):
-    if (len(arr) == 1):
+    if len(arr) == 1:
         sorted_arr = sorted(arr[0])
         arr = arr[0]
+
         if sorted_arr == arr:
             return arr[-1]
         else:
