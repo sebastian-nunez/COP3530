@@ -37,6 +37,8 @@ def canParkCar(carLen, streetLen, carLocations, carLengths):
 
 
 if __name__ == '__main__':
-    print(canParkCar(2, 9, [0, 3, 6], [2, 2, 2]))
-    print(canParkCar(3, 10, [], []))
-    print(canParkCar(2, 10, [0, 1, 2], [1, 1, 1]))
+    print(canParkCar(2, 10, [1, 4, 8], [1, 2, 2]))  # _ x _ _ x x _ _ x x
+    print(canParkCar(2, 9, [0, 3, 6], [2, 2, 2]))   # x x _ x x _ x x _
+    print(canParkCar(2, 3, [], []))                 # _ _ _
+    print(canParkCar(6, 4, [], []))                 # _ _
+    print(canParkCar(2, 3, [0, 1, 2], [1, 1, 1]))   # x x x
