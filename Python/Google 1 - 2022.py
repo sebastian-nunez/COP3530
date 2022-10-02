@@ -37,6 +37,15 @@ def canParkCar(carLen, streetLen, carLocations, carLengths):
 
 
 if __name__ == '__main__':
+    '''
+    Given:
+    1. car length
+    2. street length
+    3. car locations (where cars are parked)
+    4. length of each car parked at a spot
+
+    Find if there is an available spot to park your car
+    '''
     print(canParkCar(2, 10, [1, 4, 8], [1, 2, 2]))  # _ x _ _ x x _ _ x x
     print(canParkCar(2, 9, [0, 3, 6], [2, 2, 2]))   # x x _ x x _ x x _
     print(canParkCar(2, 3, [], []))                 # _ _ _
