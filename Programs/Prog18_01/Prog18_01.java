@@ -37,6 +37,8 @@ public class Prog18_01 {
         System.out.println("\nMin= " + min + ", time=" + (stop - start));
     }
 
+    public long timeIt()
+
     public int minimum(int[] array) {
         Arrays.sort(array);
         return array[0];
