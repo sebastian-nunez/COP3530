@@ -1,0 +1,12 @@
+{
+  "editor.fontSize": 16,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "window.zoomLevel": 0.5,
+  "presentation-mode.configBackup": {
+    "editor.fontSize": "undefined",
+    "editor.minimap.enabled": "undefined",
+    "editor.scrollbar.verticalScrollbarSize": "undefined",
+    "window.zoomLevel": "undefined"
+  }
+}

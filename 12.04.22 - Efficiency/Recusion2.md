@@ -1,27 +1,4 @@
-# Recursion
-
-## Terminology
-
-- **Directly Recursive:** a method that calls itself
-- **Indirectly Recursive:** a method that calls
-- **Tail Recursive:** recursive method in which the last statement executed is the recursive call
-- **Infinite Recursion:** the case where each recursive call results in another recursive call
-
-## Factorial
-
-### Recursive
-
-```java
-// recursive implementation
-long factorial(int n) {
-    if (n == 1) // base case
-        return 1;
-
-    return n * factorial(n - 1); // recursive calls
-}
-```
-
-## Recursion 2
+# Recursion 2
 
 ## Method that writes a given array backwards
 
@@ -29,7 +6,7 @@ long factorial(int n) {
 - print the last element recursively
 - stop when the size is zero
 
-### Normal
+## Normal
 
 ```java
 public void printReverseArray(String[] input) {
@@ -49,7 +26,7 @@ public void printReverseArrayHelper(String[] input, int lastPos) {
 }
 ```
 
-### Tail Recursion
+## Tail Recursion
 
 ```java
 public void printReverseArray2(String[] input) {
@@ -72,7 +49,7 @@ public void printReverseArrayHelper2(String[] input, int pos) {
 
 ```java
 public int count() {
-    return countItems(this.head.next); // count from head
+    return countItems(this.head.next)
 }
 
 public int countItems(Node node) {
