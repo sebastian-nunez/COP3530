@@ -29,8 +29,10 @@ public class Prog19_01 {
         int[] sortedList = { 1, 3, 4, 4, 4, 12, 17, 29, 30 };
         System.out.println("Sorted list: ");
         SortingAlgorithms.printArray(sortedList);
-
-        System.out.println("Was 12 found? " + SortingAlgorithms.binarySearch(sortedList, 12));
+        long start = System.nanoTime();
+        SortingAlgorithms.binarySearch(sortedList, 12);
+        long elapsed = System.nanoTime() - start;
+        System.out.printf("%.4f ms\n", elapsed * 1e-6);
         System.out.println("Was 99 found? " + SortingAlgorithms.binarySearch(sortedList, 99));
         ;
     }
