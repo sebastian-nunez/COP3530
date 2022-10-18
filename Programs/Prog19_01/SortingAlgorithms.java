@@ -30,7 +30,7 @@ public class SortingAlgorithms {
     public static void selectionSort(int[] list) {
         for (int i = 0; i < list.length - 1; i++) {
             int minPos = minimum(list, i, list.length - 1);
-            swap(list, i, minPos);
+            // swap(list, i, minPos);
         }
     }
 
@@ -60,6 +60,25 @@ public class SortingAlgorithms {
 
         while (p2 < list2.length)
             mergedList[p3++] = list2[p2++];
+    }
+
+    public static boolean binarySearch(int[] list, int target) {
+        int lower = 0;
+        int upper = list.length - 1;
+
+        while (lower <= upper) {
+            int mid = lower + (upper - lower) / 2;
+
+            if (target == list[mid]) {
+                return true;
+            } else if (target > list[mid]) {
+                lower = mid + 1;
+            } else {
+                upper = mid - 1;
+            }
+        }
+
+        return false;
     }
 
     public static void fillArray(int[] list) {
