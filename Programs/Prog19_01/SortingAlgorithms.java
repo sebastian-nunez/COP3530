@@ -81,6 +81,47 @@ public class SortingAlgorithms {
         return false;
     }
 
+    public static boolean linearSearch(int[] list, int target) {
+        for (int i = 0; i < list.length; i++) {
+            if (list[i] == target)
+                return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determines if <code>subset</code> is a subset of the UNORDERED <code>superset</code>
+     * @param superset
+     * @param subset
+     * @return
+     */
+    public static boolean unsortedContaiment(int[] superset, int[] subset) {
+        for (int i = 0; i < subset.length; i++) {
+            if (!SortingAlgorithms.linearSearch(superset, subset[i])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+    * Determines if <code>subset</code> is a subset of the <code>sortedSuperset</code>
+    * @param sortedSuperset
+    * @param subset
+    * @return
+    */
+    public static boolean sortedContaiment(int[] sortedSuperset, int[] subset) {
+        for (int i = 0; i < subset.length; i++) {
+            if (!SortingAlgorithms.binarySearch(sortedSuperset, subset[i])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static void fillArray(int[] list) {
         Random rand = new Random();
         for (int i = 0; i < list.length; i++)

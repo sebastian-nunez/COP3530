@@ -34,6 +34,18 @@ public class Prog19_01 {
         long elapsed = System.nanoTime() - start;
         System.out.printf("%.4f ms\n", elapsed * 1e-6);
         System.out.println("Was 99 found? " + SortingAlgorithms.binarySearch(sortedList, 99));
-        ;
+
+        System.out.println();
+        int[] superset = { 1, 5, 3, 4, 8, 6 };
+        int[] subset = { 3, 4 };
+        int[] subset2 = { 99, 1, 45 };
+
+        System.out.println(
+                "Is { 3, 4 } a subset of { 1, 5, 3, 4, 8, 6 }: "
+                        + SortingAlgorithms.unsortedContaiment(superset, subset));
+
+        System.out.println(
+                "Is { 99, 1, 45} a subset of { 1, 5, 3, 4, 8, 6 }: "
+                        + SortingAlgorithms.unsortedContaiment(superset, subset2));
     }
 }
