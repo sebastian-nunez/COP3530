@@ -15,7 +15,16 @@ public class BinarySearchTree {
     }
 
     public void display() {
+        System.out.print("Pre order: ");
+        preorderDisplay(root.getLeftChild());
+        System.out.println();
+
+        System.out.print("In order: ");
         inorderDisplay(root.getLeftChild());
+        System.out.println();
+
+        System.out.print("Postorder: ");
+        postorderDisplay(root.getLeftChild());
         System.out.println();
     }
 
@@ -43,8 +52,26 @@ public class BinarySearchTree {
             return;
 
         inorderDisplay(p.getLeftChild());
-        System.out.print(p.getInfo() + " ");
+        System.out.print(p.getInfo() + ", ");
         inorderDisplay(p.getRightChild());
+    }
+
+    private void preorderDisplay(Node p) {
+        if (p == null)
+            return;
+
+        System.out.print(p.getInfo() + ", ");
+        inorderDisplay(p.getLeftChild());
+        inorderDisplay(p.getRightChild());
+    }
+
+    private void postorderDisplay(Node p) {
+        if (p == null)
+            return;
+
+        inorderDisplay(p.getLeftChild());
+        inorderDisplay(p.getRightChild());
+        System.out.print(p.getInfo() + ", ");
     }
 
     private boolean search(int x, Node p) {

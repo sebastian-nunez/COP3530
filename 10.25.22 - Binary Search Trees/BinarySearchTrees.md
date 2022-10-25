@@ -24,6 +24,10 @@
       6     9    27
 ```
 
+- **Preorder:** 25, 5, 6, 8, 9, 37, 29, 27, 42
+- **Inorder:**
+- **Postorder:**
+
 ## Node Class
 
 - Data
