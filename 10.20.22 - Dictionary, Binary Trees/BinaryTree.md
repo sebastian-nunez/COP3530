@@ -54,7 +54,7 @@
 
 ## Types of Trees
 
-- **BST** (Binary Search Tree)
+- **BST (Binary Search Tree)**
 - AVL (Balanced AVL)
 - Splay
 - Red-black trees
