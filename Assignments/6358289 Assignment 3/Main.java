@@ -48,7 +48,7 @@ public class Main {
             endTime = date.getTime();
 
             elapsedTime = endTime - startTime;
-            output.print(k + ", " + (elapsedTime / 1000.0) + ", "); // convert ms -> seconds
+            output.print(k + "," + (elapsedTime / 1000.0) + ","); // convert ms -> seconds
 
             // binary search performance
             int[] sortedDataSet = Arrays.copyOf(dataSet, dataSet.length);
