@@ -13,7 +13,7 @@ public class Main {
         final int DATASET_SIZE = (int) 2e7;
         final int SAMPLE_SIZE = 600;
 
-        String outputFilename = "output.csv";
+        String outputFilename = "output_" + (new Date().getTime()) + ".csv";
         PrintWriter output = null;
 
         //open output stream
