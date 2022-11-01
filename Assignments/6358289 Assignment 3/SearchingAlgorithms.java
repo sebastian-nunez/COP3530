@@ -49,29 +49,6 @@ public class SearchingAlgorithms {
     }
 
     /**
-     *
-     * @param list reference to the list to be filled.
-     * @param range specifies the allowed range of values (inclusive)
-     * @author Sebastian Nunez
-     */
-    public static void fillArray(int[] list, int range) {
-        Random rand = new Random();
-        for (int i = 0; i < list.length; i++)
-            list[i] = rand.nextInt(range + 1); // add 1 to make it inclusive of the upper bound
-    }
-
-    /**
-     * Prints a visual representation of a given lists to the console.
-     * @param list reference to the list to be printed
-     * @author Sebastian Nunez
-     */
-    public static void printArray(int[] list) {
-        for (int i = 0; i < list.length; i++)
-            System.out.print(list[i] + " ");
-        System.out.println();
-    }
-
-    /**
     * Recursive quickSort algorithm
     * @author Prof. A. Hernandez
     */
@@ -120,5 +97,28 @@ public class SearchingAlgorithms {
     */
     private static int findPivotLocation(int b, int e) {
         return (b + e) / 2;
+    }
+
+    /**
+     *
+     * @param list reference to the list to be filled.
+     * @param range specifies the allowed range of values (inclusive)
+     * @author Sebastian Nunez
+     */
+    public static void fillArray(int[] list, int range) {
+        Random rand = new Random();
+        for (int i = 0; i < list.length; i++)
+            list[i] = rand.nextInt(range + 1); // add 1 to make it inclusive of the upper bound
+    }
+
+    /**
+     * Prints a visual representation of a given lists to the console.
+     * @param list reference to the list to be printed
+     * @author Sebastian Nunez
+     */
+    public static void printArray(int[] list) {
+        for (int i = 0; i < list.length; i++)
+            System.out.print(list[i] + " ");
+        System.out.println();
     }
 }
