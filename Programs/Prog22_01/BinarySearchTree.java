@@ -111,4 +111,44 @@ public class BinarySearchTree {
 
         return getMin(p.getLeftChild()); // explore left subtrees until you bottom out
     }
+
+    public int getCount() {
+        return getCount(this.root.getLeftChild());
+    }
+
+    private int getCount(Node node) {
+        if (node == null)
+            return 0;
+
+        return 1 + getCount(node.getLeftChild()) + getCount(node.getRightChild());
+    }
+
+    /**
+     * Height = length between root and deepest leaf
+     * @return
+     */
+    public int getHeight() {
+        return getHeight(root.getLeftChild());
+    }
+
+    private int getHeight(Node node) {
+        if (node == null)
+            return -1;
+
+        return 1 + Math.max(getHeight(node.getLeftChild()), getHeight(node.getRightChild()));
+    }
+
+    @Override
+    public String toString() {
+        return toString(this.root.getLeftChild());
+    }
+
+    private String toString(Node p) {
+        if (p == null)
+            return "";
+
+        return toString(p.getLeftChild())
+                + p.getInfo() + ", "
+                + toString(p.getRightChild());
+    }
 }
