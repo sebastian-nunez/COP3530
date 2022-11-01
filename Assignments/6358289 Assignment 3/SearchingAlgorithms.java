@@ -100,7 +100,7 @@ public class SearchingAlgorithms {
     }
 
     /**
-     *
+     * Fills an given array with random numbers from 0 to range (inclusive)
      * @param list reference to the list to be filled.
      * @param range specifies the allowed range of values (inclusive)
      * @author Sebastian Nunez

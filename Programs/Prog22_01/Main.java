@@ -4,21 +4,21 @@ public class Main {
     }
 
     public Main() {
-        BinarySearchTree bts = new BinarySearchTree();
-        System.out.println("empty? " + bts.isEmpty());
+        BinarySearchTree bst = new BinarySearchTree();
+        System.out.println("empty? " + bst.isEmpty());
 
-        bts.add(25);
-        bts.add(5);
-        bts.add(37);
-        bts.add(8);
-        bts.add(9);
-        bts.add(6);
-        bts.add(29);
-        bts.add(42);
-        bts.add(27);
+        bst.add(25);
+        bst.add(5);
+        bst.add(37);
+        bst.add(8);
+        bst.add(9);
+        bst.add(6);
+        bst.add(29);
+        bst.add(42);
+        bst.add(27);
 
-        bts.display();
-        System.out.println("12 is found: " + bts.contains(12));
-        System.out.println("99 is found: " + bts.contains(99));
+        System.out.println(bst);
+        System.out.println("12 is found: " + bst.contains(12));
+        System.out.println("99 is found: " + bst.contains(99));
     }
 }
