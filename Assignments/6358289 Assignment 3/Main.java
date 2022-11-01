@@ -10,9 +10,8 @@ public class Main {
     }
 
     public Main() {
-        // final int DATASET_SIZE = 10000000; // actual (int) 2e7
         final int DATASET_SIZE = (int) 2e7;
-        final int SAMPLE_SIZE = 2500;
+        final int SAMPLE_SIZE = 600;
 
         String outputFilename = "output.csv";
         PrintWriter output = null;
@@ -24,7 +23,7 @@ public class Main {
             System.exit(1);
         }
 
-        // dataset
+        // fill dataSet with DATASET_SIZE elements in the range [0, DATASET_SIZE]
         int[] dataSet = new int[DATASET_SIZE];
         SearchingAlgorithms.fillArray(dataSet, dataSet.length);
 
@@ -33,7 +32,7 @@ public class Main {
             Date date;
             long startTime, endTime, elapsedTime;
 
-            // fill the arrays
+            // fill the data source array with 'k' elements in range [0, 2 * dataSet.length]
             int[] dataSource = new int[k];
             SearchingAlgorithms.fillArray(dataSource, 2 * dataSet.length);
 
@@ -49,7 +48,7 @@ public class Main {
             endTime = date.getTime();
 
             elapsedTime = endTime - startTime;
-            output.print(k + ", " + (elapsedTime / 1000.0) + ", ");
+            output.print(k + ", " + (elapsedTime / 1000.0) + ", "); // convert ms -> seconds
 
             // binary search performance
             int[] sortedDataSet = Arrays.copyOf(dataSet, dataSet.length);
@@ -58,6 +57,7 @@ public class Main {
             startTime = date.getTime();
 
             SearchingAlgorithms.quickSort(sortedDataSet); // sort the data once
+
             for (int i = 0; i < k; i++) {
                 SearchingAlgorithms.binarySearch(sortedDataSet, dataSource[i]);
             }
@@ -66,7 +66,7 @@ public class Main {
             endTime = date.getTime();
 
             elapsedTime = endTime - startTime;
-            output.println(elapsedTime / 1000.0);
+            output.println(elapsedTime / 1000.0); // convert ms -> seconds
 
             output.flush();
         }
