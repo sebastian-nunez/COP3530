@@ -4,6 +4,11 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Date;
 
+/**
+ * Sebastian Nunez (6358289)
+ * COP3530
+ * Assignment 3
+ */
 public class Main {
     public static void main(String[] args) {
         new Main();
