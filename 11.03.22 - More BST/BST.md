@@ -1,6 +1,6 @@
-import java.util.LinkedList;
-import java.util.Queue;
+# Binary Search Trees (Part II)
 
+```java
 /**
 * @author A. Hernandez
 * Data Structures and Algorithms
@@ -185,43 +185,14 @@ public class BinarySearchTree {
     public int getMax() {
         Node node = this.root.getLeftChild();
 
-        if (node == null)
+        if (node == null) {
             return -1;
+        }
 
-        int max = node.getInfo();
         while (node != null) {
-            max = node.getInfo();
-            node = node.getLeftChild();
+            node = node.getLeftChild()
         }
-
-        return max;
-    }
-
-    /**
-     * Prints all the levels of a tree (Breath First Traversal)
-     */
-    public void printLevels() {
-        Queue<Node> queue = new LinkedList<Node>();
-        Node root = this.root.getLeftChild();
-
-        if (root == null) {
-            System.out.println("List is empty!");
-            return;
-        }
-
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            Node node = queue.poll();
-
-            System.out.print(node.getInfo() + " ");
-
-            if (node.getLeftChild() != null)
-                queue.add(node.getLeftChild());
-            if (node.getRightChild() != null)
-                queue.add(node.getRightChild());
-
-        }
-        System.out.println();
-
     }
 }
+
+```
