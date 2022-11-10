@@ -65,6 +65,32 @@ public int hash(String key, int tableSize) {
 
 ## Collision Resolution
 
+- Chaining (open hashing)
+- Open addressing (closed hashing)
+  - linear probing
+  - quadratic probing
+  - random probing
+
 ### Chaining
 
 - Whenever you encountered a collision, add it to a LinkedList
+
+### Linear Probing
+
+- elements are stored directly on the array (not keys)
+- **Two arrays**: 1 to store the actual values and 1 to store the status of the location
+- **To search:** get the hashValue, if the element in the locationStatus is 1 then you found. If the value is 1, keep looking linearly until you find an empty spot (0 in the table), the value itself [1 in the table not -1] (the value would of gone at the open spot)
+
+**Note:** -1 on the status means you removed the element, could be somewhere else
+
+#### Downfall of Linear Probing
+
+- Primary Clustering -> leads to linear time
+
+#### Solutions
+
+- **Quadratic Probing:** h(key) + i ^ 2, i = 0, 1, 2, 4, 8...
+- **Random Probing:** h(key) + r(i), r: sequence of random numbers
+- **Double Hashing**: h1(key) + i \*h2(key), use 2 hash functions
+
+> Note: resize and rehash the HashTable if the table is 70% full (load factor = 0.7)
