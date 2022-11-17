@@ -4,7 +4,7 @@
 
 - **Complete Binary Tree Property**: the heap is a binary tree that is completely filled in each level, except for possibly the bottom level, which is filled from left to right.
 
-- **Heap-Order Property**: The key at each node is smaller than or equal to the keys stored in the left and right subtrees of the nodes (min heap) -> the parent is less than its children
+- **Heap-Order Property**: The key at each node is smaller than or equal to the keys stored in the left and right subtrees of the nodes (min heap) -> **the** **parent is less than its children**
 
 ## Locating Children (arithmetically)
 
@@ -16,7 +16,7 @@ If the value of the node is at position **"i"** in the array:
 - **Parent (from left child):** position **"i // 2"**
 - **Parent (from right child):** position **"(i - 1) // 2"**
 
-## Purpose of Heaps
+## Heap Methods
 
 - Add an element: O(log n)
 - Remove the minimum: O(log n)
@@ -26,7 +26,9 @@ If the value of the node is at position **"i"** in the array:
 
 ## What can we do with Heaps?
 
-### Priority Queue
+### Priority Queue (Data Structure)
+
+> Finding element with maximum priority
 
 - add element "e" with a particular priority "n"
 - max: returns (but does not delete) an element with the highest priority
@@ -35,6 +37,19 @@ If the value of the node is at position **"i"** in the array:
 ### Heapsort
 
 - Heapsort: add all elements to a heap, removeMin until heap is empty O(n log n)
+
+```java
+public void heapsort(int[] arr, int[] sortedArr) {
+    Heap heap = new Heap();
+    for (int i = 0; i < arr.length; i++) // n
+        heap.add(arr[i]); // log n
+
+    for (int i = 0; i < arr.length; i++) { // n
+        sortedArr[i] = heap.min();
+        heap.removeMin(); // log n
+    }
+}
+```
 
 ## Adding to a Heap (Bubble Up)
 
