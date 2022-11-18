@@ -30,5 +30,5 @@
 
 - **search, add, remove in O(1)**
 - union Q.list[i] = R.list[i] | S.list[i] -> O(n) **OR**
-- union Q.list[i] = R.list[i] & S.list[i] -> O(n) **AND**
-- union Q.list[i] = R.list[i] & ~S.list[i] -> O(n) **AND NOT**
+- intersection Q.list[i] = R.list[i] & S.list[i] -> O(n) **AND**
+- difference Q.list[i] = R.list[i] & ~S.list[i] -> O(n) **AND NOT**
