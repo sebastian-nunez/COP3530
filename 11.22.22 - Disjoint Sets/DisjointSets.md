@@ -2,7 +2,7 @@
 
 > Collection of n elements partitioned in disjoint sets. Each element is unique, represented by an integer in [0, n - 1].
 
-- Representative: each set is identified by some memebr of the set, called the _representative_
+- **Representative:** each set is identified by some memebr of the set, called the _representative_
 
 ## Operations
 
@@ -18,7 +18,7 @@
 
 ## Applications of Disjoint-Set ADT
 
-- Kruskal's algorithm to compute minimum spanning tree
+- **Kruskal's algorithm to compute minimum spanning tree**
 - Maintaining connected components of a graph
 - To determine if a graph contains a cycle
 - Generation of mazes

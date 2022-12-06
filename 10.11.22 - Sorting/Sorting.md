@@ -2,7 +2,7 @@
 
 ## What?
 
-- consist of rearrangeing a collection of objects for which operators such as (== ,<=, >= etc)
+- consist of rearranging a collection of objects for which operators such as (== ,<=, >= etc)
 - you can sort many types of things: numbers, strings, people
 
 ## Why?

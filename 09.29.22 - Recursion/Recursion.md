@@ -3,7 +3,7 @@
 ## Terminology
 
 - **Directly Recursive:** a method that calls itself
-- **Indirectly Recursive:** a method that calls
+- **Indirectly Recursive:** a method that calls a recursive method (helper)
 - **Tail Recursive:** recursive method in which the last statement executed is the recursive call
 - **Infinite Recursion:** the case where each recursive call results in another recursive call
 

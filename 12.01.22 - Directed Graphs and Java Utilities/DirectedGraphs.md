@@ -1,4 +1,4 @@
-# Directed Graphs
+# Directed Graphs (Digraph)
 
 > A directed graph, or digraph, D, consists of a non empty set of element, V, called the set of vertices or nodes, and a multiset (bag), E, of ORDERED pairs of vertices, called the edges or arch
 >
