@@ -17,7 +17,8 @@
 - **Degree of a vertex:** The degree of a vertex, v, deg(v): number of edges incident to v
 - **Path:** just a sequence of edges that connects two nodes (vertices)
 - **Loop:** edge from a vertex to a itself
-- **Simple graph:** doesn't have multiple edges connecting to a node
+- **Simple graph:** doesn't have multiple edges connecting to a node or Loops
+- **Spanning Tree:** a tree that contains all the vertices (no cycles)
 
 ## Representations
 
@@ -34,3 +35,18 @@
 - **Breadth-first Traversal:** visit all adjacent vertices first (equivalent to "by-levels" traversal of a binary tree). Search outward from a vertex and expand the search space more "evenly"
   - Can be used to search! **Breath First Search (or BFS)**
   - Implemented using **queues**! Mark visited nodes -> Boolean Array (avoid infinite loop)
+
+## Algorithms - Minimum Spanning Tree (MST)
+
+> Make sure there is a way to traverse all nodes with the miminum amoutn of resources (you don't have to use all edges)
+
+- **Spanning Tree:** a tree that contains all the vertices (no cycles)
+- **Minimum Spanning Tree:** a tree with the smallest total weight
+
+### Approach
+
+1. Start off with all nodes being individual nodes (disjoint sets)
+2. sort the weight from smallest to largest
+3. start with the smallest weight, join the following weights (if they are not joined within the same cluster -> avoids cycles)
+
+- Running Time: **Kruskal's Algorithm O(m \* logn)**
